@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Proyecto Reinaldo prog
 
 ```sh
 npm create astro@latest -- --template basics
