@@ -3,53 +3,100 @@ import TarjetaAbout from "../components/Tarjeta-about.astro";
 import TarjetaContact from "../components/Tarjeta-contact.astro";
 import Layout from "../layouts/Layout.astro";
 
-import { Icon } from 'astro-icon/components'
-
+import { Icon } from "astro-icon/components";
 ---
-
 
 <Layout>
 	<section>
-		<div>
+		<div class="box1">
 			<h1>REEICC</h1>
 			<p>DJ & MUSIC PRODUCER</p>
+			<button>BOOK NOW</button>
 		</div>
 
-		<button>BOOK NOW</button>
-		<div>
-
+		<div class="box2">
 			<h2>ABOUT</h2>
-			<p>Reeicc es un DJ y productor que ha logrado posicionarse como una de las figuras emergentes más interesantes dentro del panorama de la música electrónica contemporánea. Su propuesta sonora es una mezcla vibrante y energética que camina con precisión sobre la línea que separa el Tech House de vanguardia y el Latin Tech.</p>
-
+			<p>
+				Reeicc es un DJ y productor que ha logrado posicionarse como una
+				de las figuras emergentes más interesantes dentro del panorama
+				de la música electrónica contemporánea. Su propuesta sonora es
+				una mezcla vibrante y energética que camina con precisión sobre
+				la línea que separa el Tech House de vanguardia y el Latin Tech.
+			</p>
 		</div>
-	<div>
-		<TarjetaAbout></TarjetaAbout>
-		<TarjetaAbout></TarjetaAbout>
-		<TarjetaAbout></TarjetaAbout>
-		<TarjetaAbout></TarjetaAbout>
-	</div>	
-	<div>
-		<h2>MUSIC</h2>
-	</div>
+		<div class="card1">
+			<TarjetaAbout />
+			<TarjetaAbout />
+			<TarjetaAbout />
+			<TarjetaAbout />
+		</div>
 
-	<div>
-		<h2>IN ACTION</h2>
+		<div class="music">
+			<h2>MUSIC</h2>
+		</div>
 
-	</div>
-	
-	<div>
-		<Icon name="facebook" />
-		<Icon name="instagram" />
-		<Icon name="youtube" />
-		<Icon name="music" />
-	</div>
-	<div>
-		<h2>CONTACT</h2>
+		<div class="action">
+			<h2>IN ACTION</h2>
+		</div>
 
-		<TarjetaContact></TarjetaContact>
-		<TarjetaContact></TarjetaContact>
-		<TarjetaContact></TarjetaContact>
-		
-	</div>
+		<div class="icons">
+			<Icon name="facebook" />
+			<Icon name="instagram" />
+			<Icon name="youtube" />
+			<Icon name="music" />
+		</div>
+		<div class="contact">
+			<h2>CONTACT</h2>
+
+			<TarjetaContact />
+			<TarjetaContact />
+			<TarjetaContact />
+		</div>
 	</section>
 </Layout>
+
+<style>
+	.box1 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.box2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.card1 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+	}
+
+	.music {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.action { 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.icons { 
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.contact {
+
+	}
+
+</style>

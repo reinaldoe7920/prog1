@@ -1,9 +1,30 @@
 <nav>
     <div>REEICC</div>
-    
-    <div>
-      <a href="">About me</a>
-      <a href="">Music</a>
-      <a href="">Contact</a>
+
+    <div class="links">
+        <a href="">About me</a>
+        <a href="">Music</a>
+        <a href="">Contact</a>
     </div>
 </nav>
+
+<style>
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .links {
+        display: flex;
+        gap: 24px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 700;
+    }
+
+    a {
+        display: flex;
+        color: black;
+        text-decoration-line: none;
+    }
+</style>
