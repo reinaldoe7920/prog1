@@ -9,6 +9,9 @@ import { Icon } from "astro-icon/components";
 <Layout>
 	<section>
 		<div class="box1">
+			<div>
+				<img src="/djfondo.jpg" alt="imagen-fondo" />
+			</div>
 			<h1>REEICC</h1>
 			<p>DJ & MUSIC PRODUCER</p>
 			<button>BOOK NOW</button>
@@ -37,25 +40,43 @@ import { Icon } from "astro-icon/components";
 
 		<div class="action">
 			<h2>IN ACTION</h2>
+			<div class="flex gap-6">
+				<div>
+					<img src="/dj1.jpg" alt="" width="150px" height="170px" />
+				</div>
+				<div>
+					<img src="/dj2.jpg" alt="" width="150px" height="170px" />
+				</div>
+				<div>
+					<img src="dj3.jpg" alt="" width="150px" height="170px" />
+				</div>
+			</div>
 		</div>
 
 		<div class="icons">
-			<Icon name="facebook" />
-			<Icon name="instagram" />
-			<Icon name="youtube" />
-			<Icon name="music" />
+			<Icon name="facebook" size={32} />
+			<Icon name="instagram" size={32} />
+			<Icon name="youtube" size={32} />
+			<Icon name="music" size={32} />
 		</div>
 		<div class="contact">
 			<h2>CONTACT</h2>
-
-			<TarjetaContact />
-			<TarjetaContact />
-			<TarjetaContact />
+			<div class="flex">
+				<TarjetaContact />
+				<TarjetaContact />
+				<TarjetaContact />
+			</div>
 		</div>
 	</section>
 </Layout>
 
 <style>
+	h2 {
+		font-size: 44px;
+	}
+	p {
+		font-size: 18px;
+	}
 	.box1 {
 		display: flex;
 		flex-direction: column;
@@ -63,10 +84,17 @@ import { Icon } from "astro-icon/components";
 		justify-content: center;
 	}
 
+	.box1 h1 {
+		font-size: 72px;
+	}
+
 	.box2 {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+	.box2 p {
+		max-width: 800px;
 	}
 
 	.card1 {
@@ -74,6 +102,7 @@ import { Icon } from "astro-icon/components";
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
+		padding: 24px 0px;
 	}
 
 	.music {
@@ -82,21 +111,31 @@ import { Icon } from "astro-icon/components";
 		align-items: center;
 	}
 
-	.action { 
+	.action {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.icons { 
+	.icons {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
+		gap: 24px;
+		padding: 24px 0px;
 	}
 
 	.contact {
-
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
+	section {
+		display: flex;
+		flex-direction: column;
+		background-color: rgb(16, 16, 16);
+		color: white;
+	}
 </style>
