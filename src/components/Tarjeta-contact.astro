@@ -1,11 +1,17 @@
 ---
 import { Icon } from "astro-icon/components";
+const icon = Astro.props.icon;
+const titulo = Astro.props.titulo;
+const parrafo = Astro.props.parrafo;
+const correo = Astro.props.correo;
 ---
 
-<Icon name="star" />
-
 <div>
-    <h3>BOOKINGS & INFO</h3>
-    <p>Reserva a Reeicc para tu próximo evento</p>
-    <p>prodbyreeicc@gmail.com</p>
+    <Icon name={icon} />
+
+    <div>
+        <h3>{titulo}</h3>
+        <p>{parrafo}</p>
+        <p>{correo}</p>
+    </div>
 </div>
