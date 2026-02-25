@@ -1,16 +1,43 @@
 ---
 import { Icon } from "astro-icon/components"
+const foto = Astro.props.foto;
+const ubi = Astro.props.ubi;
 ---
 
-<div>
+<div class="tarjeta">
+    <div class="fondo">
+        <img src={foto} alt="foto dj con luz roja" width="150" height="150"> 
+    </div>
 
-    <img src="/fotodj1.jpg" alt="foto dj con luz roja" width="150" height="150"> 
-
-    <div>
-        IBIZA
+    <div class="texto">
+        {ubi}
  
     </div>
 
 
 
 </div>
+
+<style>
+    .tarjeta {
+        position: relative;
+        overflow: hidden;
+        padding-top: 200px;
+        width: 250px;
+    }
+    .fondo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        width: 100%;
+        height: 100%;
+
+    }
+    .fondo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+</style>

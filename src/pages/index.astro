@@ -9,8 +9,8 @@ import { Icon } from "astro-icon/components";
 <Layout>
 	<section>
 		<div class="box1">
-			<div>
-				<img src="/djfondo.jpg" alt="imagen-fondo" />
+			<div class="fondo">
+				<img src="/djfondo.jpg" alt="" />
 			</div>
 			<h1>REEICC</h1>
 			<p>DJ & MUSIC PRODUCER</p>
@@ -28,10 +28,10 @@ import { Icon } from "astro-icon/components";
 			</p>
 		</div>
 		<div class="card1">
-			<TarjetaAbout />
-			<TarjetaAbout />
-			<TarjetaAbout />
-			<TarjetaAbout />
+			<TarjetaAbout foto="/fotodj1.jpg" ubi="Ibiza" />
+			<TarjetaAbout foto="/fotodj2.jpg" ubi="Tenerife" />
+			<TarjetaAbout foto="/fotodj3.jpg" ubi="Bali" />
+			<TarjetaAbout foto="/fotodj4.jpg" ubi="Indonesia" />
 		</div>
 
 		<div class="music">
@@ -41,14 +41,14 @@ import { Icon } from "astro-icon/components";
 		<div class="action">
 			<h2>IN ACTION</h2>
 			<div class="flex gap-6">
-				<div>
-					<img src="/dj1.jpg" alt="" width="150px" height="170px" />
+				<div class="h-24">
+					<img class="h-full object-cover" src="/dj1.jpg" alt="" width="150px" height="170px" />
 				</div>
-				<div>
-					<img src="/dj2.jpg" alt="" width="150px" height="170px" />
+				<div class="h-24">
+					<img class="h-full object-cover" src="/dj2.jpg" alt="" width="150px" height="170px" />
 				</div>
-				<div>
-					<img src="dj3.jpg" alt="" width="150px" height="170px" />
+				<div class="h-24">
+					<img class="h-full object-cover" src="dj3.jpg" alt="" width="150px" height="170px" />
 				</div>
 			</div>
 		</div>
@@ -84,6 +84,13 @@ import { Icon } from "astro-icon/components";
 </Layout>
 
 <style>
+	.fondo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -10;
+	}
+	
 	h2 {
 		font-size: 44px;
 	}
@@ -95,6 +102,10 @@ import { Icon } from "astro-icon/components";
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		position: relative;
+		padding-top: 200px;
+		padding-bottom: 200px;
+		overflow: hidden;
 	}
 
 	.box1 h1 {
@@ -148,7 +159,12 @@ import { Icon } from "astro-icon/components";
 	section {
 		display: flex;
 		flex-direction: column;
-		background-color: rgb(16, 16, 16);
-		color: white;
+	}
+
+	button { 
+		background-color: rgb(255, 255, 255); 
+		padding: 10px 20px;
+		border-radius: 7px;
+		color: black;
 	}
 </style>
