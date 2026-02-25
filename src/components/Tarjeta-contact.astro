@@ -4,6 +4,16 @@ const icon = Astro.props.icon;
 const titulo = Astro.props.titulo;
 const parrafo = Astro.props.parrafo;
 const correo = Astro.props.correo;
+
+interface Props {
+    icon: string
+    titulo: string
+    parrafo?: string
+    correo: string
+    
+}
+
+
 ---
 
 <div>
