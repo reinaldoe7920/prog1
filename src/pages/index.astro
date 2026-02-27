@@ -1,9 +1,31 @@
 ---
 import TarjetaAbout from "../components/Tarjeta-about.astro";
 import TarjetaContact from "../components/Tarjeta-contact.astro";
+
 import Layout from "../layouts/Layout.astro";
 
 import { Icon } from "astro-icon/components";
+
+const listaDeContacto = [
+	{
+		icon: "star",
+		titulo: "Bookings & Info",
+		parrafo: "Book Reeicc for your next event",
+		correo: "prodbyreeicc@gmail.com",
+	},
+
+	{
+		icon: "message",
+		titulo: "Press",
+		correo: "demosreeicc@gmail.com",
+	},
+
+	{
+		icon: "music",
+		titulo: "Demos",
+		correo: "demosreeicc@gmail.com",
+	},
+];
 ---
 
 <Layout>
@@ -42,13 +64,31 @@ import { Icon } from "astro-icon/components";
 			<h2>IN ACTION</h2>
 			<div class="flex gap-6">
 				<div class="h-24">
-					<img class="h-full object-cover " src="/dj1.jpg" alt="" width="150px" height="170px" />
+					<img
+						class="h-full object-cover"
+						src="/dj1.jpg"
+						alt=""
+						width="150px"
+						height="170px"
+					/>
 				</div>
 				<div class="h-24">
-					<img class="h-full object-cover " src="/dj2.jpg" alt="" width="150px" height="170px" />
+					<img
+						class="h-full object-cover"
+						src="/dj2.jpg"
+						alt=""
+						width="150px"
+						height="170px"
+					/>
 				</div>
 				<div class="h-24">
-					<img class="h-full object-cover " src="dj3.jpg" alt="" width="150px" height="170px" />
+					<img
+						class="h-full object-cover"
+						src="dj3.jpg"
+						alt=""
+						width="150px"
+						height="170px"
+					/>
 				</div>
 			</div>
 		</div>
@@ -62,22 +102,16 @@ import { Icon } from "astro-icon/components";
 		<div class="contact">
 			<h2>CONTACT</h2>
 			<div class="flex gap-16 px-8">
-				<TarjetaContact
-					icon="star"
-					titulo="Bookings & Info"
-					correo="prodbyreeicc@gmail.com"
-					parrafo="Book Lennert for your next event"
-				/>
-				<TarjetaContact
-					icon="message"
-					titulo="Press"
-					correo="prodbyreeicc@gmail.com"
-				/>
-				<TarjetaContact
-					titulo="Demos"
-					correo=" demoreeicc@gmail.com"
-					icon="music"
-				/>
+				{
+					listaDeContacto.map(function (producto) {
+						return <TarjetaContact
+							icon={producto.icon}
+							parrafo={producto.parrafo}
+							titulo={producto.titulo}
+							correo={producto.correo}
+						/>
+					})
+				}
 			</div>
 		</div>
 	</section>
@@ -90,7 +124,7 @@ import { Icon } from "astro-icon/components";
 		left: 0;
 		z-index: -10;
 	}
-	
+
 	h2 {
 		font-size: 44px;
 	}
@@ -161,8 +195,8 @@ import { Icon } from "astro-icon/components";
 		flex-direction: column;
 	}
 
-	button { 
-		background-color: rgb(255, 255, 255); 
+	button {
+		background-color: rgb(255, 255, 255);
 		padding: 10px 20px;
 		border-radius: 7px;
 		color: black;
