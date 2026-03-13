@@ -39,7 +39,7 @@ const listaDeContacto = [
 			<button>BOOK NOW</button>
 		</div>
 
-		<div class="box2">
+		<div class="box2" id="about">
 			<h2>ABOUT</h2>
 			<p>
 				Reeicc es un DJ y productor que ha logrado posicionarse como una
@@ -56,39 +56,45 @@ const listaDeContacto = [
 			<TarjetaAbout foto="/fotodj4.jpg" ubi="Indonesia" />
 		</div>
 
-		<div class="music">
+		<div class="music" id="music">
 			<h2>MUSIC</h2>
+			<iframe
+				width="80%"
+				height="166"
+				scrolling="no"
+				frameborder="no"
+				allow="autoplay"
+				src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2191896335&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+			></iframe><div
+				style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"
+			>
+				<a
+					href="https://soundcloud.com/reeicc"
+					title="REEICC (VE)"
+					target="_blank"
+					style="color: #cccccc; text-decoration: none;"
+					>REEICC (VE)</a
+				> · <a
+					href="https://soundcloud.com/reeicc/reeicc-ve-home-session-001-deep-tech-grooves"
+					title="REEICC (VE) - home session 001 | deep tech grooves"
+					target="_blank"
+					style="color: #cccccc; text-decoration: none;"
+					>REEICC (VE) - home session 001 | deep tech grooves</a
+				>
+			</div>
 		</div>
 
 		<div class="action">
 			<h2>IN ACTION</h2>
 			<div class="flex gap-8">
-				<div class="h-24">
-					<img
-						class="h-full object-cover"
-						src="/dj1.jpg"
-						alt=""
-						width="150px"
-						height="170px"
-					/>
+				<div class="photo-container">
+					<img class="h-full object-cover" src="/dj1.jpg" alt="" />
 				</div>
-				<div class="h-24">
-					<img
-						class="h-full object-cover"
-						src="/dj2.jpg"
-						alt=""
-						width="150px"
-						height="170px"
-					/>
+				<div class="photo-container">
+					<img class="h-full object-cover" src="/dj2.jpg" alt="" />
 				</div>
-				<div class="h-24">
-					<img
-						class="h-full object-cover"
-						src="dj3.jpg"
-						alt=""
-						width="150px"
-						height="170px"
-					/>
+				<div class="photo-container">
+					<img class="h-full object-cover" src="dj3.jpg" alt="" />
 				</div>
 			</div>
 		</div>
@@ -99,17 +105,19 @@ const listaDeContacto = [
 			<Icon name="youtube" size={32} />
 			<Icon name="music" size={32} />
 		</div>
-		<div class="contact">
+		<div class="contact" id="contact">
 			<h2>CONTACT</h2>
 			<div class="flex gap-16 px-8">
 				{
 					listaDeContacto.map(function (producto) {
-						return <TarjetaContact
-							icon={producto.icon}
-							parrafo={producto.parrafo}
-							titulo={producto.titulo}
-							correo={producto.correo}
-						/>
+						return (
+							<TarjetaContact
+								icon={producto.icon}
+								parrafo={producto.parrafo}
+								titulo={producto.titulo}
+								correo={producto.correo}
+							/>
+						);
 					})
 				}
 			</div>
@@ -118,6 +126,10 @@ const listaDeContacto = [
 </Layout>
 
 <style>
+	html {
+		scroll-behavior: smooth;
+	}
+
 	.fondo {
 		position: absolute;
 		top: 0;
@@ -142,17 +154,65 @@ const listaDeContacto = [
 		overflow: hidden;
 	}
 
+	.box1 .fondo::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.3),
+			rgba(0, 0, 0, 0.7)
+		);
+	}
+
 	.box1 h1 {
 		font-size: 72px;
+		letter-spacing: 8px;
+		font-weight: 300;
+	}
+
+	.box1 p {
+		letter-spacing: 4px;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.box1 button {
+		background: transparent;
+		border: 1px solid #e05c2a;
+		color: white;
+		padding: 0.8rem 2.5rem;
+		letter-spacing: 3px;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+
+	.box1 button:hover {
+		background: #e05c2a;
 	}
 
 	.box2 {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		max-width: 700px;
+		margin: 0 auto;
+		padding: 6rem 2rem;
+		text-align: center;
 	}
+
+	.box2 h2 {
+		font-size: 0.85rem;
+		letter-spacing: 6px;
+		color: #e05c2a; /* acento naranja */
+		margin-bottom: 2rem;
+	}
+
 	.box2 p {
 		max-width: 800px;
+		font-size: 1.1rem;
+		line-height: 1.9;
+		color: rgba(255, 255, 255, 0.75);
+		font-weight: 300;
 	}
 
 	.card1 {
@@ -168,6 +228,27 @@ const listaDeContacto = [
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		padding: 5rem 2rem;
+	}
+
+	.music h2 {
+		font-size: 0.85rem;
+		letter-spacing: 6px;
+		color: #e05c2a;
+		margin-bottom: 3rem;
+	}
+
+	.music iframe {
+		width: 60%;
+		display: block;
+		margin: 0 auto;
+		border-radius: 8px;
+		opacity: 0.9;
+		transition: opacity 0.3s;
+	}
+
+	.music iframe:hover {
+		opacity: 1;
 	}
 
 	.action {
@@ -175,8 +256,40 @@ const listaDeContacto = [
 		flex-direction: column;
 		align-items: center;
 		flex-wrap: wrap;
+		padding: 5rem 2rem;
 	}
 
+	.action .flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.photo-container {
+  width: 30%;
+  height: 220px;
+}
+
+	.action img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 4px;
+		transition:
+			transform 0.3s,
+			opacity 0.3s;
+	}
+
+	.action img:hover {
+		transform: scale(1.03);
+		opacity: 0.85;
+	}
+	.action h2 {
+		font-size: 0.85rem;
+		letter-spacing: 6px;
+		color: #e05c2a;
+		margin-bottom: 3rem;
+	}
 	.icons {
 		display: flex;
 		flex-direction: row;
@@ -190,6 +303,14 @@ const listaDeContacto = [
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.contact h2 {
+		font-size: 0.85rem;
+		letter-spacing: 6px;
+		color: #e05c2a;
+		text-align: center;
+		margin-bottom: 3rem;
 	}
 
 	section {

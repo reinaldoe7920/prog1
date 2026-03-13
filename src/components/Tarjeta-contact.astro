@@ -16,7 +16,7 @@ interface Props {
 
 ---
 
-<div>
+<div class="contact-card">
     <Icon name={icon} />
 
     <div>
@@ -25,3 +25,53 @@ interface Props {
         <p>{correo}</p>
     </div>
 </div>
+
+<style>
+  .contact-card {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: border-color 0.3s;
+  }
+
+  .contact-card:hover {
+    border-color: white;
+  }
+
+  /* Ícono más grande y destacado */
+  .contact-card svg {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Título principal */
+  .contact-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  /* Párrafo secundario */
+  .contact-card p:first-of-type {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  /* Correo destacado */
+  .contact-card p:last-of-type {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    margin: 0;
+  }
+</style>
